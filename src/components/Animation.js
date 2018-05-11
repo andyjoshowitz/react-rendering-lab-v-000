@@ -6,6 +6,7 @@ class Animation extends React.Component {
 
     this.state = {
       url: " http://placehold.it/500x150",
+
     };
   }
 
@@ -30,6 +31,10 @@ class Animation extends React.Component {
     progressBar.className = "off on";
     setTimeout(() => (progressBar.className = "off"), 1100);
   };
+
+  componentWillUpdate(nextProps, nextState) {
+    this.showLoadingBar();
+  }
 
   render() {
     return (
